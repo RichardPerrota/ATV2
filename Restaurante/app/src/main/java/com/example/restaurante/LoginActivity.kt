@@ -12,14 +12,16 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+// Ele infla  a tela e a monta o código 
         binding = ActivityLoginBinding.inflate(layoutInflater)
+        
         setContentView(binding.root)
 
         binding.buttonEntrar.setOnClickListener {
             val username = binding.editUsername.text.toString().trim()
             val password = binding.editPassword.text.toString().trim()
-
+// Se esse código for verdadeiro, ele inicia a MainActivity e passa o nome de usuário como um valor extra. 
+//Caso contrário, nada acontece.
             if (username.equals("abc") && password.equals("123")) {
                 val i = Intent(this, MainActivity::class.java)
                 i.putExtra("username", username)
